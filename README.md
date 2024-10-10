@@ -12,3 +12,7 @@
 1. git branch develop
 2. git checkout develop
 3. git push -u origin develop
+
+## Create a feature branch
+1. git checkout develop
+2. git checkout -b feature_branch
