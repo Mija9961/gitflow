@@ -31,6 +31,7 @@ The overall flow of Gitflow is:
 ## Merge feature branch to develop
 1. git checkout develop
 2. git merge feature_branch
+3. git push -u origin develop
 
 ## Create a release branch
 1. git checkout develop
@@ -39,6 +40,13 @@ The overall flow of Gitflow is:
 ## Merge release branch to main/master
 1. git checkout main
 2. git merge release/0.1.0
+3. git push -u origin main
+
+## Create a tag to main/master
+1. git checkout main
+2. git tag -a v1.1.0 -m "xyz feature is released in this tag."
+3. git tag
+4. git push origin v1.0.1
 
 ## Create a hotfix branch
 1. git checkout main
@@ -46,3 +54,12 @@ The overall flow of Gitflow is:
 3. git add .
 4. git commit -m "Changes made in hotfix branch"
 5. git push -u origin hotfix_branch
+
+## Merge hotfix branch to both main/master and develop
+1. git checkout main
+2. git merge hotfix_branch
+3. git push -u origin main
+4. git checkout develop
+5. git merge hotfix_branch
+6. git push -u origin develop
+7. git branch -d hotfix_branch
